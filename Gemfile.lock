@@ -64,9 +64,9 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     netrc (0.11.0)
-    nokogiri (1.8.2)
+    nokogiri (1.8.3)
       mini_portile2 (~> 2.3.0)
-    pg (1.0.0)
+    pg (0.21.0)
     puma (3.11.4)
     rack (1.6.10)
     rack-test (0.6.3)
@@ -120,7 +120,7 @@ PLATFORMS
 
 DEPENDENCIES
   chargebee
-  pg
+  pg (~> 0.18)
   puma
   rails
 
