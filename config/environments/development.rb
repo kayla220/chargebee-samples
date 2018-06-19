@@ -5,8 +5,8 @@ CbSampleApp::Application.configure do
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
 
-  ENV["CHARGEBEE_SITE"]="<your-site>"
-  ENV["CHARGEBEE_API_KEY"]="<your-api-key>"
+  ENV["CHARGEBEE_SITE"]="honeycomics-test"
+  ENV["CHARGEBEE_API_KEY"]="test_3gfwsdd6doB2EKRP7cufTd5TvT32a5BrT"
 
 
   config.cache_classes = false

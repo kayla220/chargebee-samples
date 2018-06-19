@@ -37,5 +37,5 @@ CbSampleApp::Application.configure do
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
 
-  log_level = :debug
+  #config.log_levell = :debug
 end
