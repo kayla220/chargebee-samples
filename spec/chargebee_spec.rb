@@ -11,7 +11,7 @@ describe "chargebee" do
   it "serialize should convert the hash to acceptable format" do
     before = {
       :id => "sub_KyVq7DNSNM7CSD",
-      :plan_id => "free",
+      :plan_id => "basic",
        :addons => [{:id => "monitor", :quantity => 2}, {:id => "ssl"}],
        :addon_ids => ["addon_one", "addon_two"],
        :card => {
@@ -25,7 +25,7 @@ describe "chargebee" do
     }
     after = {
       "id"=>"sub_KyVq7DNSNM7CSD",
-      "plan_id"=>"free",
+      "plan_id"=>"basic",
       "addons[id][0]"=>"monitor",
       "addons[quantity][0]"=>"2",
       "addons[id][1]"=>"ssl",
@@ -96,4 +96,3 @@ describe "chargebee" do
   end
 
 end
-

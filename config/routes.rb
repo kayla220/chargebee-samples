@@ -1,5 +1,8 @@
 CbSampleApp::Application.routes.draw do
 
+
+  root to: 'index#hello'
+
   get "/plan_config", to: "plan_configuration#configure"
 
   post "/webhook_handler", to: "webhook_handler#handle"
@@ -28,7 +31,7 @@ CbSampleApp::Application.routes.draw do
   #get "/estimate/order_summary", to: "estimate_checkout#order_summary"
 
   # stripe js checkout
-  post '/stripe_js/checkout', to: 'stripe_js_checkout#create'
+  #post '/stripe_js/checkout', to: 'stripe_js_checkout#create'
 
   # trial signup
   #post '/trial_signup/signup'=> 'trial_signup#create'
@@ -93,7 +96,9 @@ CbSampleApp::Application.routes.draw do
   #get "/checkout_iframe/thankyou", to: "checkout_using_iframe#thankyou"
 
   #stripe pop js checkout
-  post "/stripe-popup-js/checkout", to: "stripe_popup_js#checkout"
+  post "/stripe-popup-js/signup", to: "stripe_popup_js#checkout"
+
+  #get "/stripe-popup-js/thankyou", to: "stripe_popup_j#thankyou"
   #Braintree js
   #get "/braintree-js/signup", to: "braintree_js#signup"
   #post "/braintree-js/checkout", to: "braintree_js#checkout"
@@ -107,4 +112,6 @@ CbSampleApp::Application.routes.draw do
   post "/404", to: "errors#error_404"
   post "/500", to: "errors#error_500"
   post "/*", to: "errors#error_404"
+
+
 end

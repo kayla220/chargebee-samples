@@ -12,3 +12,6 @@ gem 'pg', "~> 0.18"
 
 gem 'chargebee'
 gem 'puma'
+
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+

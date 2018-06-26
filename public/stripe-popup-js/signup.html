@@ -16,23 +16,24 @@
         <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>
 
 
-
+        <script src="https://js.chargebee.com/v2/chargebee.js" data-cb-site="diversitea-test" ></script>
         <script src="https://checkout.stripe.com/checkout.js">
         </script>
 
-        <form action="your-server-side-code" method="POST">
-          <script
-            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-            data-key="pk_test_RXYtpN8KttuUPEqBkqnBSYJi"
-            data-amount="999"
-            data-name="DiversiTea"
-            data-description="Example charge"
-            data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-            data-locale="auto"
-            data-currency="gbp">
-          </script>
-        </form>
-
+<!-- Stripe
+        <form action="/stripe-popup-js/signup" method="POST">
+        <script
+          src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="pk_test_RXYtpN8KttuUPEqBkqnBSYJi"
+          data-amount="999"
+          data-name="DiversiTea"
+          data-description="Example charge"
+          data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+          data-locale="auto"
+          data-currency="gbp">
+        </script>
+      </form>
+-->
         <!-- It is better to have the below script as separate file.-->
         <script type="text/javascript">
 
@@ -74,7 +75,7 @@
                 window.location.replace(responseJSON.forward);
             }
 
-
+            // Handling the returned token
             function handleStripeToken(token, args) {
                         form = $("#subscribe-form");
                         $("input[name='stripeToken']").val(token.id );
@@ -93,7 +94,6 @@
                         return false;
                     }
 
-
             $(document).ready(function() {
                 $("#subscribe-form").validate({
                     rules: {
@@ -107,6 +107,7 @@
                 // configuring Stripe publishable key and setting the options in Stripe Js.
                 var handler = StripeCheckout.configure({
                     //Replace it with your stripe publishable key
+                    //****Replace it with live key later****
                     key: 'pk_live_OPqUkQpOMwyMk9VXBuTQdaj9',
                     image: '/assets/images/favicon.png',
                     allowRememberMe: true,
@@ -202,7 +203,7 @@
                             </div>
                         </div>
                         <h3 class="page-header">Where would you like us to deliver
-                            <small>(Only shipped within USA)</small>
+                            <small>Delivery fee may charge</small>
                         </h3>
                         <div class="row">
                             <div class="col-sm-6">
@@ -263,7 +264,7 @@
         </div>
         <br><br>
         <div class="footer text-center">
-            <span class="text-muted">&copy; Honey Comics. All Rights Reserved.</span>
+            <span class="text-muted">&copy; DiversiTea. All Rights Reserved.</span>
         </div>
     </body>
 </html>
